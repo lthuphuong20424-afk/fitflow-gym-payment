@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9f0f5">
+  <title>FitFlow · MoMo-style Checkout Simulator</title>
+  <link rel="stylesheet" href="/assets/css/momo_simulator.css?v=9">
+</head>
+<body>
+  <div class="sim-stage">
+    <aside class="stage-copy" aria-hidden="true">
+      <div class="stage-label">FITFLOW CLUB / PAYMENT EXPERIENCE</div>
+      <h1>ONE APP.<br>SEAMLESS<br><em>PAYMENTS.</em></h1>
+      <p>Gym membership payments, demonstrated across a FitFlow checkout and a clearly labelled MoMo-style provider simulator.</p>
+      <div class="stage-foot">DESIGNED FOR CLASSROOM DEMONSTRATION</div>
+    </aside>
+    <div class="sim-phone" aria-label="MoMo-style classroom simulator">
+      <div class="sim-shell">
+        <div class="pink-ribbon" aria-hidden="true"></div>
+        <div class="phone-status" aria-hidden="true">
+          <span class="time-pill" id="clock">19:23</span>
+          <span class="signal">▂ ▅ ▇ <b>5G</b> <span class="battery">70 ▸</span></span>
+        </div>
+        <header class="sim-header">
+          <a id="back-link" class="back-button" href="/" aria-label="Quay về FitFlow">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </a>
+          <div class="header-title">Thanh toán an toàn</div>
+        </header>
+        <div class="sim-scroll" id="sim-scroll">
+          <div class="trust-strip"><span class="trust-dot"></span><strong>CLASSROOM SIMULATOR</strong> <span>· Không phải ứng dụng MoMo thật</span></div>
+          <section class="info-banner" id="info-banner">
+            <span class="banner-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.5 13.5a5 5 0 0 0 7.1 0l2.1-2.1a5 5 0 0 0-7.1-7.1l-1.2 1.2M13.5 10.5a5 5 0 0 0-7.1 0l-2.1 2.1a5 5 0 0 0 7.1 7.1l1.2-1.2"/></svg></span>
+            <div class="banner-copy"><strong id="banner-title">Đang xử lý yêu cầu từ FitFlow</strong><small id="banner-desc">Vui lòng kiểm tra thông tin trước khi tiếp tục</small></div>
+            <span class="info-i">i</span>
+          </section>
+          <section class="merchant-card" id="merchant-card">
+            <div class="merchant-head">
+              <span class="merchant-logo"><img src="/assets/media/appmark.svg" alt="FitFlow Club"></span>
+              <strong>FITFLOW CLUB</strong>
+              <span class="merchant-demo">DEMO</span>
+            </div>
+            <div class="divider-dashed"></div>
+            <dl class="invoice-list">
+              <div><dt>Mã đơn hàng</dt><dd id="invoice">FF-00000</dd></div>
+              <div><dt>Nội dung</dt><dd id="description">Thanh toán gói tập Monthly Pass FitFlow Club</dd></div>
+              <div><dt id="amount-label">Tạm tính</dt><dd class="highlight-amount" id="invoice-amount">600.000đ</dd></div>
+            </dl>
+          </section>
+          <button class="offers" id="offers" type="button" aria-expanded="false">
+            <span class="offer-icon">%</span><strong>Ưu đãi</strong><small id="offer-summary">Chọn hoặc nhập mã</small><span class="chevron">›</span>
+          </button>
+          <p class="offer-note" id="offer-note" hidden>Hiện không có ưu đãi khả dụng trong bản mô phỏng này.</p>
+          <section class="sources-card" id="sources-card">
+            <h2 id="sources-heading">Phương thức thanh toán</h2>
+            <h3>Thanh toán bằng MoMo</h3>
+            <label class="wallet-source is-selected" id="wallet-source">
+              <img src="/assets/media/momo.png" alt="MoMo logo">
+              <span class="source-description"><strong>Ví MoMo</strong><small id="wallet-detail">Ví mẫu · •••• 8842</small></span>
+              <input id="momo-source" type="radio" name="ui-source" value="momo_wallet" checked aria-label="Chọn ví MoMo mẫu">
+              <span class="ui-radio" aria-hidden="true"></span>
+            </label>
+            <div id="terms-summary" class="terms-summary"><span class="rotate-icon">↻</span><span id="terms-message">Hỗ trợ thanh toán và gia hạn theo chu kỳ đã đăng ký.</span></div>
+            <div id="auth-details" class="auth-details" hidden>
+              <div class="term-item"><span>Chu kỳ thu</span><strong>Hàng tháng</strong></div>
+              <div class="term-item"><span>Giới hạn mỗi kỳ</span><strong id="term-amount">600.000đ</strong></div>
+              <div class="term-item"><span>Thanh toán đầu tiên</span><strong>Xác nhận riêng</strong></div>
+              <div class="term-item"><span>Hủy thu định kỳ</span><strong>Được phép trước kỳ tiếp theo</strong></div>
+            </div>
+            <div id="auth-entry" class="auth-entry" hidden>
+              <label for="wallet-suffix">Xác nhận 4 số cuối ví mẫu</label>
+              <input id="wallet-suffix" type="text" name="wallet_suffix" form="approve-form" inputmode="numeric" autocomplete="off" pattern="[0-9]{4}" maxlength="4" placeholder="Nhập 4 số cuối: 8842" required>
+              <small>Chỉ nhập <b>8842</b> để thử nghiệm; đây không phải PIN, số thẻ hay mã OTP.</small>
+              <label class="checkrow"><input id="auth-consent" type="checkbox" form="approve-form" required><span>Tôi đồng ý cho FitFlow yêu cầu thu tối đa <b id="consent-amount">600.000đ</b> mỗi tháng qua ví MoMo mẫu, cho đến khi hủy ủy quyền.</span></label>
+            </div>
+            <div id="bank-section" class="bank-section" hidden>
+              <div class="bank-head"><h3>Trả ngay</h3><span>Tài khoản mẫu</span></div>
+              <label class="funding-source" data-source="vcb_demo">
+                <span class="bank-logo vcb">VCB</span><span class="source-description"><strong>Vietcombank</strong><small>•••• 6868 · Demo</small></span>
+                <input type="radio" name="ui-source" value="vcb_demo" aria-label="Vietcombank mô phỏng"><span class="ui-radio" aria-hidden="true"></span>
+              </label>
+              <label class="funding-source" data-source="tcb_demo">
+                <span class="bank-logo tcb">TCB</span><span class="source-description"><strong>Techcombank</strong><small>•••• 1234 · Demo</small></span>
+                <input type="radio" name="ui-source" value="tcb_demo" aria-label="Techcombank mô phỏng"><span class="ui-radio" aria-hidden="true"></span>
+              </label>
+              <label class="funding-source" data-source="bidv_demo">
+                <span class="bank-logo bidv">BIDV</span><span class="source-description"><strong>BIDV</strong><small>•••• 5678 · Demo</small></span>
+                <input type="radio" name="ui-source" value="bidv_demo" aria-label="BIDV mô phỏng"><span class="ui-radio" aria-hidden="true"></span>
+              </label>
+              <p class="funding-footnote">Các nguồn tiền chỉ để minh họa. Không có tài khoản ngân hàng nào được liên kết hoặc ghi nợ thật.</p>
+            </div>
+            <div id="result-message" class="result-message" hidden></div>
+          </section>
+
+
+<section id="success-screen" class="transaction-detail-screen" aria-live="polite" hidden>
+  <div class="transaction-caption">GIAO DỊCH MOMO MẪU · KHÔNG CHUYỂN TIỀN THẬT</div>
+  <section class="transaction-card transaction-primary">
+    <div class="transaction-merchant">
+      <span class="transaction-fitflow-logo"><img src="/assets/media/appmark.svg" alt="FitFlow Club"></span>
+      <div><span>FITFLOW CLUB</span><strong id="success-amount">-600.000đ</strong></div>
+    </div>
+    <div class="transaction-status-line"><span>Trạng thái</span><span class="transaction-status-pill"><span class="transaction-status-dot"></span>Thành công</span></div>
+    <div class="transaction-data-line"><span>Thời gian</span><strong id="success-date">–</strong></div>
+    <button type="button" id="transaction-process-toggle" class="transaction-accordion" aria-expanded="false" aria-controls="transaction-process-panel">
+      Quá trình giao dịch
+      <svg class="transaction-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 9 7 7 7-7"/></svg>
+    </button>
+    <div id="transaction-process-panel" class="transaction-process-panel" hidden>
+      <div><span class="process-okay"></span><span>Đã xác nhận thanh toán trong MoMo Simulator</span></div>
+      <div><span class="process-okay"></span><span>FitFlow đã ghi nhận hóa đơn PAID</span></div>
+    </div>
+    <div class="transaction-divider"></div>
+    <div class="transaction-data-line transaction-ref"><span>Mã giao dịch</span><div class="transaction-inline"><strong id="success-reference">–</strong><button type="button" class="transaction-copy" data-copy="success-reference" aria-label="Sao chép mã giao dịch">▢</button></div></div>
+    <div class="transaction-data-line"><span>Tài khoản/thẻ</span><strong id="success-funding">Ví MoMo · mẫu</strong></div>
+    <div class="transaction-data-line"><span>Tổng phí</span><strong>Không áp dụng (demo)</strong></div>
+    <div class="transaction-data-line"><span>Danh mục</span><strong class="transaction-category">♡ Sức khỏe</strong></div>
+  </section>
+  <section class="transaction-card transaction-order-card">
+    <h2>Thông tin đơn hàng</h2>
+    <div class="transaction-data-line"><span>Dịch vụ</span><strong class="transaction-pink">FitFlow Club</strong></div>
+    <div class="transaction-data-line"><span>Mã đơn hàng</span><div class="transaction-inline"><strong id="success-invoice">FF-00000</strong><button class="transaction-copy" data-copy="success-invoice" type="button" aria-label="Sao chép mã đơn hàng">▢</button></div></div>
+    <div class="transaction-data-line"><span>Mô tả</span><strong class="transaction-pink" id="success-plan">Monthly Pass</strong></div>
+    <button type="button" class="transaction-help-button" id="contact-support-button">Liên hệ CSKH</button>
+  </section>
+  <section class="transaction-manage">
+    <div class="transaction-manage-title"><img src="/assets/media/appmark.svg" alt=""><strong>Quản lý tại FitFlow</strong></div>
+    <p>Kiểm tra gói hội viên, thời hạn sử dụng và thông tin thanh toán định kỳ tại FitFlow.</p>
+    <div class="transaction-data-line"><span>Hội viên</span><strong id="success-member">–</strong></div>
+    <div class="transaction-data-line"><span>Gói tập đến hạn</span><strong id="success-membership-until">–</strong></div>
+    <a id="manage-fitflow-link" href="/" class="transaction-manage-link">Xem biên nhận tại FitFlow ↗</a>
+  </section>
+  <p class="transaction-disclaimer">MoMo-style classroom simulator. Đây không phải ứng dụng MoMo thật và không phát sinh giao dịch tiền.</p>
+</section>
+<div id="support-sheet" class="support-sheet" hidden aria-labelledby="support-title" role="dialog" aria-modal="false">
+  <div class="support-sheet-content">
+    <button id="support-close" type="button" class="support-close" aria-label="Đóng hỗ trợ">×</button>
+    <span class="support-eyebrow">FITFLOW / DEMO SUPPORT</span>
+    <h2 id="support-title">Liên hệ CSKH</h2>
+    <p>Đây là phần hỗ trợ mô phỏng. Chưa có tổng đài hoặc email CSKH thật được kết nối. Bạn có thể sao chép thông tin để gửi cho nhân viên hỗ trợ khi cần.</p>
+    <div class="support-summary" id="support-summary">Đang chuẩn bị thông tin giao dịch…</div>
+    <button id="support-copy" type="button" class="support-primary">Sao chép thông tin hỗ trợ</button>
+    <p id="support-feedback" role="status" aria-live="polite"></p>
+  </div>
+</div>
+          <div class="bottom-spacer"></div>
+
+        </div>
+        <div class="bottom-dock">
+          <div class="total-row"><span id="total-title">Tổng tiền</span><strong id="total-money">600.000đ</strong></div>
+          <p class="dock-caption" id="dock-caption">MoMo và FitFlow không xử lý tiền thật trong bản mô phỏng.</p>
+          <form id="approve-form" method="post" action="/">
+            <input type="hidden" id="funding-source" name="payment_source" value="momo_wallet">
+            <button id="primary-button" type="submit" class="primary-button"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span id="primary-label">Xác nhận</span></button>
+          </form>
+          <form id="decline-form" method="post" action="/"><button id="decline-button" type="submit" class="decline-button">Từ chối</button></form>
+          <a id="return-button" href="/" class="primary-button return-button" hidden>Return to FitFlow <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="home-line" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+    <aside class="stage-stamp" aria-hidden="true"><span>PROVIDER SIMULATOR</span><b>02 / 02</b></aside>
+  </div>
+  <!-- MOMO_BOOTSTRAP -->
+  <!-- This classroom simulator is not operated by MoMo. No real payment is processed. -->
+  <script src="/assets/js/momo_simulator.js?v=9" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+FITFLOW CLUB — STRIDE EDITION
+
+The mobile UI follows the approved premium sport-editorial concept.
+- Desktop: realistic phone bezel on a neutral editorial presentation stage.
+- Mobile: full-screen app, without the decorative desktop phone frame.
+- UI is in English, with the user's VietQR/MoMo image assets.
+- Main stages: Choose Plan -> Select Method -> VietQR/MoMo -> Receipt -> History.
+
+Edit the frontend files here:
+ frontend/index.html
+ frontend/css/styles.css
+ frontend/js/app.js
+ frontend/media/
+
+The backend is unchanged except for user-facing error and demo-QR page text translated to English. Do not open index.html with file://; run the backend on http://localhost:8000.
+
+The DEMO QR is scannable but NOT a bank transfer code. LIVE VietQR needs merchant payOS credentials, an actual receiving bank account, and a public HTTPS callback.
+
+See README.md and QUICK_START_VI.txt.

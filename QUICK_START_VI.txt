@@ -1,0 +1,12 @@
+FITFLOW STRIDE v10 — KHOI DONG / DEMO
+===================================
+1. Giai nen ZIP v10, mo dung thu muc Gym_Payment_Fullstack trong VS Code.
+2. Mo Terminal va chay: .\run_windows.bat
+3. Mo http://localhost:8000 (khong can Docker).
+4. VietQR: Plans -> chon goi -> Dynamic VietQR -> Proceed -> xem QR va PENDING.
+   DEMO: mo Presenter / QA -> Send success event -> backend ghi nhan -> FitFlow hien Digital Receipt.
+   QR demo chi ma hoa thong tin hoa don mau, KHONG quet bang app ngan hang de chuyen tien.
+5. MoMo: Monthly Pass -> MoMo Auto-Renew -> MoMo-style Payment -> Xac nhan
+   -> Chi tiet giao dich -> Return to FitFlow -> Digital Receipt.
+6. Ca hai luong chi dung mot tab trinh duyet.
+7. Xem docs/VIETQR_V10_PAYMENT_FLOW_VI.md va docs/MOMO_TRANSACTION_DETAILS_VI.md.
