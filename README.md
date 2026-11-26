@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FitFlow STRIDE v10 — Gym Membership Payment Demo
 
 Frontend (HTML/CSS/JavaScript) + FastAPI backend + SQLite locally / PostgreSQL on Vercel. **No Docker.** Customer-facing screens use English. MoMo-style provider checkout is a classroom simulator, not the official MoMo app.
@@ -35,3 +36,6 @@ Open **http://localhost:8000**. Use `Ctrl+C` in Terminal to stop the backend. No
 See [`docs/DEPLOY_VERCEL_VI.md`](docs/DEPLOY_VERCEL_VI.md). Vercel requires a **persistent PostgreSQL** database (`DATABASE_URL`), even in Demo mode. SQLite in ephemeral Vercel storage is not durable. In `PAYMENT_MODE=live`, configure `PAYOS_CLIENT_ID`, `PAYOS_API_KEY`, `PAYOS_CHECKSUM_KEY` and public HTTPS `PUBLIC_BASE_URL`. Live mode verifies signed payment notifications; the classroom Demo event endpoint is disabled. Merchant onboarding and production security hardening are still required.
 
 **Security scope:** Educational prototype with no proper user authentication, access controls, or full operational reconciliations. Do not deploy for actual merchant transactions without engineering and compliance review. Never commit `.env` or payment credentials.
+=======
+# fitflow-gym-payment
+>>>>>>> d00cd1a25a79113eae2db00e024a50b31e6e7b52
